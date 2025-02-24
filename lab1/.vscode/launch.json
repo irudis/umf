@@ -1,0 +1,65 @@
+{
+  "version": "0.2.0",
+  "configurations": [ {
+      "preLaunchTask": "Build with g++",
+      "name": "(gdb) Запустить",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/output.bin",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [ {
+              "description": "Включить автоматическое форматирование для gdb",
+              "text": "-enable-pretty-printing",
+              "ignoreFailures": true
+          }, {
+              "description": "Задать для варианта приложения дизассемблирования значение Intel",
+              "text": "-gdb-set disassembly-flavor intel",
+              "ignoreFailures": true
+          }
+      ]
+    }, {
+      "name": "Run Program",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "preLaunchTask": "Build with g++",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "setupCommands": [ {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }, {
+      "name": "Debug Program",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "preLaunchTask": "Build with g++",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "setupCommands": [ {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

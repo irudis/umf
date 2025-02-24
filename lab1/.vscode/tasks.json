@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "tasks": [ {
+        "label": "Build with g++",
+        "type": "shell",
+        "command": "bash",
+        "args": [
+          "-c",
+          "g++ -g $(find . -name \"*.cpp\") -o ${workspaceFolder}/output.bin"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": ["$gcc"],
+        "detail": "Compiles all .cpp files in the workspace and subfolders"
+      }
+    ]
+  }
